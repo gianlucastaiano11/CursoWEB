@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Column vs Bloco</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      display: flex; /* Para alinhar os containers lado a lado para comparação */
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    .section-container {
+      border: 2px dashed #999;
+      padding: 15px;
+      background-color: #f0f0f0;
+      width: 45%; /* Para que os blocos de exemplo fiquem lado a lado */
+      box-sizing: border-box; /* Inclui padding e border na largura */
+    }
+
+    .container-title {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .box {
+      background-color: #cbe300;
+      border: 1px solid #7c8e00;
+      padding: 10px;
+      margin-bottom: 10px; /* Para separar visualmente */
+      text-align: center;
+      color: #333;
+    }
+
+    /* --- ESTILO PARA O CONTAINER FLEX (COLUNA) --- */
+    .flex-column-container {
+      display: flex;
+      flex-direction: column;
+      height: 300px; /* Definir altura para visualizar o flex-grow */
+      border: 2px solid #5a7d9a;
+      background-color: #e6f0ff;
+      padding: 10px;
+    }
+
+    .flex-item {
+      background-color: #f7a54a;
+      border: 1px solid #cc7e2a;
+      padding: 10px;
+      margin-bottom: 5px; /* Margem entre os itens flex */
+      color: #333;
+      text-align: center;
+    }
+    
+    .flex-item-grow {
+        flex-grow: 1; /* Faz este item crescer na altura */
+    }
+
+    /* --- MODIFICADORES PARA O CONTAINER FLEX --- */
+
+    /* Para fazer os itens flex na coluna ocuparem 100% da largura */
+    .flex-column-stretch {
+        align-items: stretch; /* Padrão, mas explícito */
+    }
+
+    /* Para centralizar os itens flex horizontalmente dentro da coluna */
+    .flex-column-center-horizontal {
+        align-items: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="section-container">
+    <h2 class="container-title">Comportamento de Bloco Padrão</h2>
+    <div class="box">
+      <span>Eu sou uma div de bloco.</span>
+      <p>Ocupo 100% da largura do meu pai por padrão.</p>
+    </div>
+    <div class="box">
+      <span>Outra div de bloco.</span>
+      <p>Mesmo com pouco conteúdo, me expando totalmente.</p>
+    </div>
+  </div>
+
+  <div class="section-container">
+    <h2 class="container-title">Flexbox `flex-direction: column`</h2>
+    <p style="font-size: 0.9em; text-align: center; margin-bottom: 15px;">(Container tem `height: 300px`)</p>
+
+    <h3>Padrão (`flex-direction: column`)</h3>
+    <div class="flex-column-container">
+      <div class="flex-item">Item Flex 1 (Conteúdo)</div>
+      <div class="flex-item">Item Flex 2 (Um pouco mais de conteúdo para mostrar)</div>
+    </div>
+    <p style="font-size: 0.8em;">Note: Itens empilhados, mas a largura é só do conteúdo.</p>
+
+    <hr>
+
+    <h3>Com `align-items: stretch` (Largura Total)</h3>
+    <div class="flex-column-container flex-column-stretch">
+      <div class="flex-item">Item Flex 1</div>
+      <div class="flex-item">Item Flex 2</div>
+    </div>
+    <p style="font-size: 0.8em;">Note: Itens empilhados, e agora ocupam 100% da largura.</p>
+
+    <hr>
+
+    <h3>Com `align-items: center` (Centralizado Horizontalmente)</h3>
+    <div class="flex-column-container flex-column-center-horizontal">
+      <div class="flex-item">Item Flex 1</div>
+      <div class="flex-item">Item Flex 2 (Conteúdo)</div>
+    </div>
+    <p style="font-size: 0.8em;">Note: Itens empilhados, e centralizados horizontalmente.</p>
+    
+    <hr>
+
+    <h3>Com `flex-grow: 1` (Preenchendo Altura)</h3>
+    <div class="flex-column-container flex-column-stretch">
+      <div class="flex-item flex-item-grow">Item Flex 1 (Cresce em Altura)</div>
+      <div class="flex-item">Item Flex 2</div>
+    </div>
+    <p style="font-size: 0.8em;">Note: O primeiro item preenche a altura restante.</p>
+
+  </div>
+
+</body>
+</html>

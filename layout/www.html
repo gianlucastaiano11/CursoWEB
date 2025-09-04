@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo Position</title>
+  <style>
+    body {
+      display: flex;
+      gap: 20px;
+      height: 300px;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+
+    .box {
+      width: 120px;
+      height: 120px;
+      color: white;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Static */
+    .static {
+      background: red;
+      position: static; /* padrão */
+    }
+
+    /* Relative */
+    .relative {
+      background: blue;
+      position: relative;
+      top: 20px;   /* move dentro do fluxo */
+      left: 20px;
+    }
+
+    /* Absolute */
+    .absolute {
+      background: green;
+      position: absolute;
+      top: 300px;  /* em relação ao body (pois não há pai posicionado) */
+      left: 500px;
+    }
+
+    /* Sticky */
+    .sticky-container {
+      height: 200px;
+      overflow-y: scroll;
+      background: #ddd;
+      padding: 10px;
+    }
+
+    .sticky {
+      background: purple;
+      position: sticky;
+      top: 0; /* cola no topo ao rolar */
+    }
+  </style>
+</head>
+<body><div>
+  <div class="box static">Static</div>
+  <div class="box relative">Relative</div>
+  <div class="box absolute">Absolute</div>
+
+  <div class="sticky-container">
+    <div class="box sticky">Sticky</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Morbi eget velit a urna euismod posuere. Pellentesque habitant morbi 
+    tristique senectus et netus et malesuada fames ac turpis egestas. 
+    Donec nec eros nec justo porttitor ultricies. Lorem ipsum dolor sit amet...</p>
+    <p>Continue rolando...</p>
+    <p>Mais texto...</p>
+    <p>Fim do container</p>
+  </div>
+  </div>
+</body>
+</html>

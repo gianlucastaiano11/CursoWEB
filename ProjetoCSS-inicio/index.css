@@ -1,0 +1,128 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #ccc;
+    
+}
+
+.banner{
+    
+    
+    height: 800px;
+    background-image: url(imagens/bg-3.jpg);
+    background-size:  cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position:  right;
+    
+    
+    
+}
+
+.banner-content{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    margin: 250px 0;
+    line-height: 1.75;
+    
+}
+
+.banner-content h1{
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 90px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.banner-content p{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: whitesmoke;
+    width: 500px;
+    margin: auto;
+    padding: 10px;
+    border-bottom: 1px solid white;
+    font-size: 19px;
+}
+
+.bannerul{
+    display: inline-block;
+    list-style-type: none;
+    text-align: right;
+    margin-left: 75%;
+    padding: 0;
+}
+
+.bannerul li{
+    display: inline-block;
+    margin-left: 8px;
+    
+    
+}
+
+.bannerul a{
+    text-decoration: none;
+    background-color: #7c7878;
+    padding: 10px;
+    border: 1px solid white;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    border-radius: 15px;
+    
+}
+
+.bannerul a:hover{
+    background-color: black;
+    color: white;
+
+}
+
+
+.mainsection{
+    background-color: whitesmoke;
+    width: 85%;
+    margin: auto;
+    padding: 15px;
+    padding-top: 2px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.mainsection h2{
+    background-color: #dfdfdf;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #7c7878;
+}
+
+.mainsection p{
+    color: black;
+}
+
+.mainsection a{
+    text-decoration: none;
+    
+}
+
+footer{
+    box-sizing: border-box;
+    margin: auto;
+    background-color: #7c7878;
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 5px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-align: center;
+    position: relative;
+    bottom: 0;
+}
+
+footer p{
+    margin: 0;
+    font-size: 12px;
+}
